@@ -19,12 +19,6 @@ const server = http.createServer((req, res) => {
     case '/':
       readWrite('index.html', 'text/html');
       break;
-    case '/otherpage':
-      readWrite('otherpage.html', 'text/html');
-      break;
-    case '/otherotherpage':
-      readWrite('otherotherpage.html', 'text/html');
-      break;
     case '/api':
       let magicResponse = [
         'It is certain',
@@ -37,7 +31,6 @@ const server = http.createServer((req, res) => {
         'Signs point to yes',
       ];
       let flipResult = Math.floor(Math.random() * magicResponse.length);
-
       res.writeHead(200, { 'Content-Type': 'application/json' });
       const objToJson = {
         result: magicResponse[flipResult],
