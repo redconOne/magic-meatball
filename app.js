@@ -7,7 +7,6 @@ const port = process.env.PORT || 3000;
 const server = http.createServer((req, res) => {
   const page = url.parse(req.url).pathname;
   const params = querystring.parse(url.parse(req.url).query);
-  console.log(page);
 
   const readWrite = (file, contentType) => {
     fs.readFile(file, function (err, data) {
