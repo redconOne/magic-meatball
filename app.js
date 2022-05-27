@@ -2,6 +2,7 @@ const http = require('http');
 const fs = require('fs');
 const url = require('url');
 const querystring = require('querystring');
+const port = process.env.PORT || 3000;
 
 const server = http.createServer((req, res) => {
   const page = url.parse(req.url).pathname;
@@ -49,4 +50,6 @@ const server = http.createServer((req, res) => {
   }
 });
 
-server.listen(3000);
+server.listen(port, () => {
+  console.log(`Server running at port ` + port);
+});
