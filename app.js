@@ -30,10 +30,10 @@ const server = http.createServer((req, res) => {
         'Outlook not so good',
         'Signs point to yes',
       ];
-      let flipResult = Math.floor(Math.random() * magicResponse.length);
+      let randNum = Math.floor(Math.random() * magicResponse.length);
       res.writeHead(200, { 'Content-Type': 'application/json' });
       const objToJson = {
-        result: magicResponse[flipResult],
+        result: magicResponse[randNum],
       };
       res.end(JSON.stringify(objToJson));
       break;

@@ -1,17 +1,161 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500&display=swap');
+
+/* reset box sizing*/
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* body with gradient*/
 body {
-  background-image: url(https://i.imgur.com/pdVixtL.png);
-  background-repeat: no-repeat;
-  background-size: cover;
-  text-align: center;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(
+    0deg,
+    rgba(26, 113, 149, 1) 0%,
+    rgb(7, 14, 54) 100%
+  );
 }
 
+/* main box holding everything except credits*/
+.container {
+  display: flex;
+  justify-content: center;
+  margin-top: 5rem;
+}
+
+/* Think of a question...*/
 h1 {
-  color: red;
+  color: rgb(170, 146, 209);
+  font-family: 'Caveat', cursive;
 }
 
+/* meatwads section*/
+.credits {
+  margin-top: 150px;
+  margin-left: 35%;
+  color: white;
+
+  font-family: 'Caveat', cursive;
+  color: rgb(182, 159, 223);
+}
+
+ul {
+  display: flex;
+  list-style: none;
+}
+
+li {
+  margin-right: 20px;
+  font-size: 1.5rem;
+}
+
+/* rockoos modern life image*/
+img {
+  justify-content: center;
+  align-content: center;
+  position: absolute;
+  z-index: -1;
+  box-shadow: 12px 29px 81px 0px rgba(0, 0, 0, 0.75);
+  border-radius: 10%;
+}
+
+/* the clickity clack box*/
 #clickMe {
-  border-radius: 20%;
+  border-radius: 10%;
   padding: 0.5rem;
   text-decoration: none;
+
+  outline: none;
+  background: transparent;
+  cursor: pointer;
+  color: white;
+  font-size: 1rem;
+
+  display: flex;
+  margin-top: 24rem;
+}
+
+/* main settings for click*/
+.btn-roll {
+  position: relative;
+  right: 20px;
+  bottom: 20px;
   border: none;
+  box-shadow: none;
+  width: 130px;
+  height: 40px;
+  line-height: 42px;
+  -webkit-perspective: 230px;
+  perspective: 230px;
+}
+
+/* gradient and transition startup for click*/
+.btn-roll span {
+  background: rgb(131, 0, 238);
+  background: linear-gradient(
+    0deg,
+    rgb(233, 181, 85) 0%,
+    rgb(206, 126, 22) 100%
+  );
+  display: block;
+  position: absolute;
+  width: 130px;
+  height: 40px;
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+  margin: 0;
+  text-align: center;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+/* click selecting first span*/
+.btn-roll span:nth-child(1) {
+  box-shadow: -7px -7px 20px 0px #fff9, -4px -4px 5px 0px #fff9,
+    7px 7px 20px 0px #0002, 4px 4px 5px 0px #0001;
+  -webkit-transform: rotateX(90deg);
+  -moz-transform: rotateX(90deg);
+  transform: rotateX(90deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+
+/* click selecting second span*/
+.btn-roll span:nth-child(2) {
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+  -webkit-transform-origin: 50% 50% -20px;
+  -moz-transform-origin: 50% 50% -20px;
+  transform-origin: 50% 50% -20px;
+}
+
+/* click selecting first span hover effect*/
+.btn-roll:hover span:nth-child(1) {
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  -webkit-transform: rotateX(0deg);
+  -moz-transform: rotateX(0deg);
+  transform: rotateX(0deg);
+}
+
+/* click selecting second span hover effect*/
+.btn-roll:hover span:nth-child(2) {
+  box-shadow: inset 2px 2px 2px 0px rgba(255, 255, 255, 0.5),
+    7px 7px 20px 0px rgba(0, 0, 0, 0.1), 4px 4px 5px 0px rgba(0, 0, 0, 0.1);
+  color: transparent;
+  -webkit-transform: rotateX(-90deg);
+  -moz-transform: rotateX(-90deg);
+  transform: rotateX(-90deg);
 }
